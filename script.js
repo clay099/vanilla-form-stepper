@@ -92,7 +92,12 @@ function updateTracking(e, idx) {
 	e.preventDefault();
 	document.querySelector(".btn-group").classList.add("hidden");
 	document.querySelector(".completed-section").classList.add("hidden");
-	separators[idx - 1].classList.add("active");
+	if (idx - 1 >= 0) {
+		separators[idx - 1].classList.add("active");
+		// for (let i = idx; i < separators.length; i++) {
+		// 	separators[i].classList.remove("active");
+		// }
+	}
 
 	const currActiveTracker = document.querySelector(".tracker.active");
 	currActiveTracker.classList.remove("active");
